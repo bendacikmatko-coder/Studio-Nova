@@ -1,0 +1,544 @@
+html {
+  height: 100%;
+  background: 50% 50% no-repeat
+    url('data:image/svg+xml,<svg viewBox="-20 -5 60 40" width="140" xmlns="http://www.w3.org/2000/svg" opacity="0.2"><path d="M1 8l11-7 11 7v8l-11 7-11-7zm0 0l11 8 11-8m0 8L12 8 1 16M12 1v7m0 8v7" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"/><text x="-12" y="32" font-size="5" font-family="monospace" fill="currentColor">Built on CodePen</text></svg>');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+
+:root {
+  --dark: #142331;
+  --gold: #d9b77a;
+  --cream: #f7f4ed;
+  --white: #ffffff;
+  --muted: #65717c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* NAVIGÁCIA */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(20, 35, 49, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 7%;
+  box-shadow: 0 4px 25px #00000012;
+}
+
+.logo {
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 17px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* HLAVNÁ SEKCIA */
+
+header {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 90px 20px;
+  background:
+    radial-gradient(circle at 75% 25%,
+      #344b5d 0%, transparent 45%),
+    linear-gradient(135deg, #142331, #1c3448);
+  color: white;
+}
+
+.hero-content {
+  max-width: 750px;
+  animation: fadeUp 1s ease both;
+}
+
+.eyebrow {
+  display: block;
+  color: var(--gold);
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+h1 {
+  font-size: clamp(44px, 7vw, 86px);
+  line-height: 1.12;
+  margin-bottom: 25px;
+}
+
+h1 em {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+header p {
+  color: #d6dce1;
+  max-width: 520px;
+  margin: 0 auto 30px;
+  font-size: 18px;
+}
+
+/* TLAČIDLÁ */
+
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 15px 32px;
+  border-radius: 50px;
+  font-weight: 700;
+  box-shadow: 0 8px 25px #00000020;
+}
+
+.btn:hover {
+  background: #f0ce92;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px #00000030;
+}
+
+/* SPOLOČNÉ SEKCIE */
+
+section {
+  padding: 100px 7%;
+  text-align: center;
+}
+
+section h2 {
+  font-size: clamp(34px, 5vw, 52px);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.intro {
+  color: var(--muted);
+  margin-bottom: 45px;
+}
+
+/* SLUŽBY */
+
+.cards {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e9e4db;
+  border-radius: 18px;
+  padding: 32px 22px;
+  text-align: left;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-9px);
+  box-shadow: 0 18px 40px #14233118;
+}
+
+.number {
+  color: #ad8952;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.card h3 {
+  margin: 22px 0 10px;
+  font-size: 20px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+  min-height: 70px;
+}
+
+.card strong {
+  font-size: 25px;
+  color: #98713b;
+}
+
+/* O NÁS */
+
+.about {
+  background: #eae5db;
+  text-align: left;
+}
+
+.about-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+.about p {
+  color: #4c5964;
+  font-size: 17px;
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #946c33;
+  font-weight: 700;
+}
+
+.text-link:hover {
+  transform: translateX(5px);
+}
+
+/* KONTAKT */
+
+.contact {
+  background: var(--dark);
+  color: white;
+}
+
+.contact p {
+  color: #d0d8df;
+}
+
+.contact .btn {
+  margin-top: 20px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #0d1923;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+footer h3 {
+  color: var(--gold);
+  letter-spacing: 3px;
+}
+
+footer p {
+  color: #aab5bf;
+  font-size: 13px;
+}
+
+/* ANIMÁCIE */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 950px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBIL */
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  header {
+    min-height: 65vh;
+    padding: 70px 20px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 65px 20px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card p {
+    min-height: auto;
+  }
+
+  .about {
+    text-align: center;
+  }
+}
+
+/* PRÍSTUPNOSŤ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+header {
+  min-height: 88vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
+
+  background:
+    linear-gradient(
+      rgba(10, 22, 33, 0.75),
+      rgba(10, 22, 33, 0.85)
+    ),
+    url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1600&q=85");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery {
+  background: #f7f4ed;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.4s ease,
+              box-shadow 0.4s ease;
+}
+
+.gallery-grid img:hover {
+  transform: translateY(-7px) scale(1.02);
+  box-shadow: 0 20px 35px #00000025;
+}
+
+.photo-note {
+  font-size: 12px;
+  color: #65717c;
+  margin-top: 18px;
+}
+
+@media (max-width: 700px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 280px;
+  }
+}
+
+.reviews {
+  background: #eae5db;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+.review {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 16px;
+  text-align: left;
+  box-shadow: 0 8px 25px #00000008;
+  transition: transform 0.3s ease;
+}
+
+.review:hover {
+  transform: translateY(-6px);
+}
+
+.stars {
+  color: #b78c46;
+  letter-spacing: 3px;
+  margin-bottom: 18px;
+}
+
+.review p {
+  color: #4c5964;
+  font-style: italic;
+}
+
+.review strong {
+  font-size: 13px;
+  color: #142331;
+}
+
+@media (max-width: 700px) {
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hours {
+  max-width: 400px;
+  margin: 35px auto;
+  padding: 25px;
+  border: 1px solid #ffffff35;
+  border-radius: 16px;
+  background: #ffffff08;
+}
+
+.hours h3 {
+  color: #d9b77a;
+}
+
+.hours p {
+  margin-bottom: 8px;
+}
+
+.hours small {
+  color: #aab5bf;
+}
+
+/* Jemné animácie pri scrollovaní */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Lepšie ovládanie klávesnicou */
+a:focus-visible {
+  outline: 3px solid #d9b77a;
+  outline-offset: 5px;
+}
+
+/* Plynulé odkazy a tlačidlá */
+.nav-links a,
+.text-link,
+.btn {
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Menšie pohyby pri citlivosti na animácie */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    padding: 5px 0;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+}
+
+
